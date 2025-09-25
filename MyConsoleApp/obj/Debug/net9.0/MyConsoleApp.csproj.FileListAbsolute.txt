@@ -1,0 +1,14 @@
+C:\.net\MyConsoleApp\bin\Debug\net9.0\MyConsoleApp.exe
+C:\.net\MyConsoleApp\bin\Debug\net9.0\MyConsoleApp.deps.json
+C:\.net\MyConsoleApp\bin\Debug\net9.0\MyConsoleApp.runtimeconfig.json
+C:\.net\MyConsoleApp\bin\Debug\net9.0\MyConsoleApp.dll
+C:\.net\MyConsoleApp\bin\Debug\net9.0\MyConsoleApp.pdb
+C:\.net\MyConsoleApp\obj\Debug\net9.0\MyConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\.net\MyConsoleApp\obj\Debug\net9.0\MyConsoleApp.AssemblyInfoInputs.cache
+C:\.net\MyConsoleApp\obj\Debug\net9.0\MyConsoleApp.AssemblyInfo.cs
+C:\.net\MyConsoleApp\obj\Debug\net9.0\MyConsoleApp.csproj.CoreCompileInputs.cache
+C:\.net\MyConsoleApp\obj\Debug\net9.0\MyConsoleApp.dll
+C:\.net\MyConsoleApp\obj\Debug\net9.0\refint\MyConsoleApp.dll
+C:\.net\MyConsoleApp\obj\Debug\net9.0\MyConsoleApp.pdb
+C:\.net\MyConsoleApp\obj\Debug\net9.0\MyConsoleApp.genruntimeconfig.cache
+C:\.net\MyConsoleApp\obj\Debug\net9.0\ref\MyConsoleApp.dll
