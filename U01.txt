@@ -1,0 +1,68 @@
+1. Copy of output -
+[
+    {
+        "id": 1,
+        "name": "Classic Italian",
+        "isGlutenFree": false
+    },
+    {
+        "id": 2,
+        "name": "Veggie",
+        "isGlutenFree": true
+    },
+    {
+        "id": 3,
+        "name": "Pepperoni",
+        "isGlutenFree": false
+    },
+    {
+        "id": 4,
+        "name": "BBQ Chicken",
+        "isGlutenFree": false
+    }
+]
+
+
+2. Sales summary function -
+void GenerateSalesSummaryReport(IEnumerable<string> salesFiles, string outputDirectory)
+{
+    var report = new StringBuilder();
+    double totalSales = 0;
+    var salesDetails = new List<(string filename, double amount)>();
+    
+    // Calculate totals for each file
+    foreach (var file in salesFiles)
+    {
+        string salesJson = File.ReadAllText(file);
+        SalesData? data = JsonConvert.DeserializeObject<SalesData?>(salesJson);
+        double amount = data?.Total ?? 0;
+        
+        totalSales += amount;
+        
+        string relativePath = Path.GetRelativePath(Path.Combine(Directory.GetCurrentDirectory(), "stores"), file);
+        string displayName = relativePath.Replace("\\", "/");
+        
+        if (amount > 0)
+        {
+            salesDetails.Add((displayName, amount));
+        }
+    }
+    
+    // Build the report
+    report.AppendLine("Sales Summary");
+    report.AppendLine("----------------------------");
+    report.AppendLine($" Total Sales: ${totalSales:N2}");
+    report.AppendLine();
+    report.AppendLine(" Details:");
+    
+    foreach (var (filename, amount) in salesDetails)
+    {
+        report.AppendLine($"  {filename}: ${amount:N2}");
+    }
+    
+    // Write the report to a file
+    string reportPath = Path.Combine(outputDirectory, "sales-summary.txt");
+    File.WriteAllText(reportPath, report.ToString());
+    
+    Console.WriteLine($"Sales summary report generated: {reportPath}");
+}
